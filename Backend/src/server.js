@@ -8,6 +8,26 @@ app.use(express.json());
 
 const port = 3030;
 
+
+app.get('/login', (req, res) =>{
+    const {name, password} = req.body
+
+    const query = 'SELECT * FROM users WHERE name = ? AND password = ?';    
+    connection.query(query, [name, password], (err, results) =>{
+        if (err) {
+            return res.status(500).json({success:false, message:'Erro no servidor'})
+        }
+        if (results.length > 0) {
+            res.json({success:true, message:"Login bem sucedido!"})
+        }
+        else {
+            res.json({success:false, message:"Usuario ou senha não encontrados!"})
+
+        }
+    })
+})
+
+
 app.post('/cadastroMorador', (req, res) =>{
     const {name, blocoAndApartament, phoneAndEmail, status} = req.body
     const query = "INSERT INTO users (name, blocoAndApartament, phoneAndEmail, status) VALUES (?,?,?,?)"

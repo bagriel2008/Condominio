@@ -9,7 +9,7 @@ app.use(express.json());
 const port = 3030;
 
 
-app.get('/login', (req, res) =>{
+app.post('/login', (req, res) =>{
     const {name, password} = req.body
 
     const query = 'SELECT * FROM users WHERE name = ? AND password = ?';    

@@ -1,0 +1,95 @@
+@media (max-width: 1920px) {
+    body {
+        background-image: url("./Imagens/Home.png");
+        margin: 0;
+        padding: 0;
+        font-family: "Joti One", serif;
+        font-size: 25px;
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    header {
+        background-color: #257599;
+        color: #f6f3eb;
+        display: flex;
+        align-items: center;
+        padding: 7px 30px;
+        box-shadow: 5px 5px 5px #777777;
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+    }
+
+    .botoes {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    button {
+        background-color: #67A8CD;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-family: "Joti One", serif;
+        font-size: 35px;
+        padding: 20px;
+        box-shadow: 5px 5px 5px #777777;
+        margin-bottom: 20px;
+    }
+
+    .moradores {
+        margin: 30px;
+        margin-top: 150px;
+        margin-left: 60px;
+        padding: 0 80px;
+    }
+
+    .veiculos {
+        margin: 50px;
+        margin-left: 60px;
+        padding: 0 100px;
+    }
+}
+
+/* Estilo para telas pequenas (até 400px de largura) */
+@media (max-width: 400px) {
+    body {
+        font-size: 18px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    header {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .botoes {
+        align-items: center;
+        width: 100%;
+    }
+
+    button {
+        font-size: 22px;
+        padding: 15px;
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .moradores, .veiculos {
+        margin: 20px;
+        padding: 0 20px;
+        text-align: center;
+    }
+}

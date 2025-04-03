@@ -1,0 +1,127 @@
+@media (max-width: 1920px) {
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 25px;
+        background-color: #f6f3eb;
+    }
+
+    header {
+        background-color: #257599;
+        color: #f6f3eb;
+        display: flex;
+        align-items: center;
+        padding: 7px 30px;
+        box-shadow: 5px 5px 5px #777777;
+        font-family: "Joti One", serif;
+    }
+
+    .logo img {
+        width: 150px;
+        height: auto;
+    }
+
+    .login-container {
+        background-color: #67A8CD;
+        color: white;
+        padding: 30px;
+        margin: 50px auto;
+        margin-top: 70px;
+        width: 20%;
+        border-radius: 20px;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login {
+        padding: 30px;
+        align-items: center;
+        font-size: 40px;
+        margin: 15px;
+        font-family: "Joti One", serif;
+    }
+
+    #username, #password {
+        font-size: 25px;
+        padding: 2px;
+        margin-top: 15px;
+        align-items: flex-start;
+        font-family: "Josefin Sans", sans-serif;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    input {
+        background-color: #8DBEDA;
+        border: none;
+        color: #295872;
+        height: 5vh;
+        width: 20vw;
+    }
+
+    .botao {
+        padding: 10px 20px;
+        margin: 20px;
+        margin-left: 35.5%;
+        color: white;
+        background-color: #257599;
+        font-size: 25px;
+        border-radius: 15px;
+        border: none;
+    }
+}
+
+/* Estilo para telas pequenas (até 400px de largura) */
+@media (max-width: 400px) {
+    body {
+        font-size: 18px;
+        padding: 0;
+        background-color: #f6f3eb;
+    }
+
+    header {
+        padding: 5px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    .login-container {
+        width: 80%;
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .login {
+        font-size: 28px;
+        padding: 20px;
+    }
+
+    #username, #password {
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: "Josefin Sans", sans-serif;
+
+    }
+
+    input {
+        width: 90%;
+        height: 6vh;
+        font-size: 1rem;
+    }
+
+    .botao {
+        width: 90%;
+        margin: 10px 0;
+        font-size: 20px;
+        padding: 10px;
+        margin-left: 0;
+    }
+}

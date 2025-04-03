@@ -1,73 +1,80 @@
-async function cadastroCars() {
-    const response = await fetch('http://localhost:3030/cadastroCarro')
-    const data = await response.json()
-    const tbody = document.querySelector('tbody')
-    tbody.innerHTML = ''
+async function listarVeiculos() {
+    try {
+        const response = await fetch('http://localhost:3030/veiculos');
+        const data = await response.json();
+        const tbody = document.getElementById('veiculos-table-body');
 
-    data.cadastroCarro.forEach(car => {
+        tbody.innerHTML = '';
 
-        const row = document.createElement('tr')
-        row.innerHTML = `
-                <td>${veiculos.id}</td>
-                <td>${veiculos.morador_id}</td>
-                <td>${veiculos.plate}</td>
-                <td>${veiculos.modelAndColor}</td>
-                <td>${veiculos.vacancy}</td>
-
+        data.veiculos.forEach(veiculo => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${veiculo.id}</td>
+                <td>${veiculo.owner_name}</td>
+                <td>${veiculo.plate}</td>
+                <td>${veiculo.modelAndColor}</td>
+                <td>${veiculo.vacancy}</td>
                 <td>
-                    <button  class = "edit-btn" onclick="editCars(${veiculos.id})">Editar </button>
-                    <button class = "delete-btn" onclick="deleteCars(${veiculos.id})">Deletar </button>
-
+                    <button class="edit-btn" onclick="editCarro(${veiculo.id})">Editar</button>
+                    <button class="delete-btn" onclick="deleteCarro(${veiculo.id})">Deletar</button>
                 </td>
-
-            `
-        tbody.appendChild(row)
-
-
+            `;
+            tbody.appendChild(row);
+        });
+    } catch (error) {
+        console.error("Erro ao buscar veículos:", error);
     }
-    );
 }
 
-document.querySelector('.car-form form').addEventListener('submit', async (e) => {
-    e.preventDefault()
+document.getElementById('CadastrarCarro').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    const name = document.getElementById('car-name').value
-    const placa = document.getElementById('car-placa').value
+    const owner_name = document.getElementById('owner_name').value;
+    const plate = document.getElementById('plate').value;
+    const modelAndColor = document.getElementById('modelAndColor').value;
+    const vacancy = document.getElementById('vacancy').value;
+
+    const response = await fetch('http://localhost:3030/cadastroCarro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ owner_name, plate, modelAndColor, vacancy })
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+        alert('Cadastro bem-sucedido!');
+    } else {
+        alert('Erro ao cadastrar veículo!');
+    }
+
+    listarVeiculos()
+});
+
+async function editCarro(id) {
+    const owner_name = prompt('novo nome')
+    const modelAndColor = prompt('novo modelo e cor')
+    const plate = prompt('novo placa')
+    const vacancy = prompt('nova vaga')
 
 
-
-    await fetch('http://localhost:3030/cadastroCarro', {
-
-        method: 'post',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({name, placa})
-    })
-
-    document.querySelector('.car-form form').reset()
-    cadastroCars()
-})
-
-async function editCars(id) {
-    const name = prompt('novo nome')
-
-    await fetch(`http://localhost:3030/cadastroCarro/${id}`, {
+    await fetch(`http://localhost:3030/editCarro/${id}`, {
         method: 'put',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ name }),
-        body: JSON.stringify({ placa })
+        body: JSON.stringify({ owner_name, modelAndColor, plate, vacancy })
 
     })
 
-    cadastroCars()
+    listarVeiculos()
 
 }
 
 
-async function deleteCars(id) {
-    await fetch(`http://localhost:3030/cadastroCarro/${id}`,{
+async function deleteCarro(id) {
+    await fetch(`http://localhost:3030/deleteCars/${id}`, {
         method: 'DELETE'
     })
-    cadastroCars()
+    listarVeiculos()
 }
 
-cadastroCars()
+listarVeiculos()

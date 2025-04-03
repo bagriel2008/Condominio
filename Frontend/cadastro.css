@@ -1,9 +1,9 @@
 @media (max-width: 1920px) {
   body {
-      margin: 0;
-      padding: 0;
-      font-size: 25px;
-      background-color: #f6f3eb;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    background-color: #f6f3eb;
   }
 
   header {
@@ -15,7 +15,7 @@
     box-shadow: 5px 5px 5px #777777;
     font-family: "Joti One", serif;
   }
-  
+
   .logo img {
     width: 150px;
     height: auto;
@@ -26,25 +26,28 @@
     display: flex;
     gap: 2rem;
   }
-  
-  .CadastrarMorador, .moradores-list {
+
+  .CadastrarMorador,
+  .moradores-list {
     flex: 1;
   }
-  
-  .CadastrarMorador h2, .moradores-list h2 {
+
+  .CadastrarMorador h2,
+  .moradores-list h2 {
     margin-bottom: 1rem;
     font-size: 1.8rem;
     color: #357599;
   }
-  
-  .CadastrarMorador input, .CadastrarMorador button {
+
+  .CadastrarMorador input,
+  .CadastrarMorador button {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     background-color: #8DBEDA;
     border: none;
   }
-  
+
   .CadastrarMorador button {
     background-color: #257599;
     color: white;
@@ -55,17 +58,18 @@
     font-family: "Joti One", serif;
     margin: 10px;
   }
-  
+
   .CadastrarMorador button:hover {
     background-color: #357599;
   }
-  
+
   .moradores-list table {
     width: 100%;
     border-collapse: collapse;
   }
-  
-  .moradores-list th, .moradores-list td {
+
+  .moradores-list th,
+  .moradores-list td {
     padding: 10px;
     border: 1px solid #67A8CD;
     text-align: center;
@@ -73,32 +77,33 @@
     font-family: "Josefin Sans", sans-serif;
 
   }
-  
-  .edit-btn, .delete-btn {
+
+  .edit-btn,
+  .delete-btn {
     padding: 5px 10px;
     margin: 0 5px;
     border: none;
     cursor: pointer;
   }
-  
+
   .edit-btn {
     background-color: #8DBEDA;
     color: white;
   }
-  
+
   .edit-btn:hover {
     background-color: #3388ce;
   }
-  
+
   .delete-btn {
-    background-color:#67A8CD;
+    background-color: #67A8CD;
     color: white;
   }
-  
+
   .delete-btn:hover {
     background-color: #4292BF;
   }
-  
+
   h2 {
     font-family: "Joti One", serif;
   }
@@ -113,53 +118,58 @@
 /* Estilo para telas pequenas (até 400px de largura) */
 @media (max-width: 400px) {
   body {
-      font-size: 18px;
-      padding: 0;
+    font-size: 18px;
+    padding: 0;
   }
 
   header {
-      padding: 5px 15px;
-      flex-direction: column;
-      align-items: flex-start;
+    padding: 5px 15px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .logo img {
-      width: 120px;
+    width: 120px;
   }
 
   main {
-      padding: 1rem;
-      flex-direction: column;
-      gap: 1rem;
-  }
-  
-  .CadastrarMorador, .moradores-list {
-      width: 100%;
-  }
-  
-  .CadastrarMorador h2, .moradores-list h2 {
-      font-size: 1.5rem;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .CadastrarMorador input, .CadastrarMorador button {
-      padding: 8px;
-      font-size: 1rem;
+  .CadastrarMorador,
+  .moradores-list {
+    width: 100%;
   }
-  
+
+  .CadastrarMorador h2,
+  .moradores-list h2 {
+    font-size: 1.5rem;
+  }
+
+  .CadastrarMorador input,
   .CadastrarMorador button {
-      margin: 5px;
-  }
-  
-  .moradores-list table {
-      font-size: 0.9rem;
-  }
-  
-  .moradores-list th, .moradores-list td {
-      padding: 8px;
+    padding: 8px;
+    font-size: 1rem;
   }
 
-  .edit-btn, .delete-btn {
-      padding: 4px 8px;
-      font-size: 0.8rem;
+  .CadastrarMorador button {
+    margin: 5px;
+  }
+
+  .moradores-list table {
+    font-size: 0.9rem;
+  }
+
+  .moradores-list th,
+  .moradores-list td {
+    padding: 8px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 4px 8px;
+    font-size: 0.8rem;
   }
 }
